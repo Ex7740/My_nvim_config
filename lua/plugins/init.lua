@@ -22,6 +22,7 @@ require("lazy").setup({
   require("plugins.nvim-tree"),
   require("plugins.lualine"),
   require("plugins.toggleterm"),
-  require("plugins.lazygit"),
+  require("plugins.which"),
+  require("plugins.nui")
 })
 

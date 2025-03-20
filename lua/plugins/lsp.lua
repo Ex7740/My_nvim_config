@@ -7,7 +7,7 @@ return {
   config = function()
     require("mason").setup()
     require("mason-lspconfig").setup({
-      ensure_installed = { "pyright", "rust_analyzer", "html", "cssls", "ts_ls", "gopls", "lua_ls", "clangd"},
+      ensure_installed = { "pyright", "rust_analyzer", "html", "cssls", "ts_ls", "gopls", "lua_ls", "clangd", "arduino_language_server"},
       automatic_installation = true,
     })
 
@@ -54,6 +54,11 @@ return {
           procMacro = { enable = true },
         },
       },
+    })
+    
+    lspconfig.clangd.setup({
+        cmd = { "clangd", "--background-index", "--clang-tidy" },
+        filetypes = { "c", "cpp", "objc", "objcpp" },
     })
 
   end,
